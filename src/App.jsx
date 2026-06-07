@@ -84,19 +84,33 @@ export default function App() {
   const handleDelete = (id) => {
     setData((prev) => prev.filter((item) => item.id !== id));
   };
-
+  
   // Filtering
   const getFilteredData = () => {
     let filtered = data;
-    
+
+    const today = new Date();
+
     if (filter === "week") {
-      filtered = data.slice(-7);
+      const sevenDaysAgo = new Date();
+      sevenDaysAgo.setDate(today.getDate() - 7);
+
+      filtered = data.filter((item) => {
+        const itemDate = new Date(item.date);
+        return itemDate >= sevenDaysAgo && itemDate <= today;
+      });
     }
 
     if (filter === "month") {
-      filtered = data.slice(-30);
-    }
+      const thirtyDaysAgo = new Date();
+      thirtyDaysAgo.setDate(today.getDate() - 30);
 
+      filtered = data.filter((item) => {
+        const itemDate = new Date(item.date);
+        return itemDate >= thirtyDaysAgo && itemDate <= today;
+      });
+    }
+    
     // Sort by date
     return [...filtered].sort((a, b) => {
       return new Date(a.date) - new Date(b.date);
