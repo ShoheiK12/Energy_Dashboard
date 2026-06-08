@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import EnergyChart from "./components/EnergyChart";
+import KPIcards from "./components/KPIcards";
 import "./App.css";
 
 export default function App() {
@@ -152,7 +153,9 @@ export default function App() {
         <button onClick={() => setFilter("month")}>Month</button>
       </div>
       
-      <div className="chart">
+      <KPIcards data={data} />
+
+      <div className="chart card">
         <EnergyChart data={getFilteredData()} />
       </div>
 
@@ -170,7 +173,6 @@ export default function App() {
                 <button
                   className="delete-btn"
                   onClick={() => handleDelete(item.id)}
-                  style={{ marginLeft: "10px", color: "red" }}
                 >
                 Delete
                 </button>

@@ -1,13 +1,21 @@
 body {
   margin: 0;
-  background: #f5f7fb;
-  font-family: Arial, sans-serif;
+  background: #a4bc8e;
+  font-family: sans-serif;
+  color: #111;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px;
 }
 
 .title {
@@ -34,9 +42,17 @@ body {
 }
 
 .form-group input {
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px;
+  outline: none;
+  background: white;
+  transition: 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 .form-group label {
@@ -46,17 +62,16 @@ body {
 }
 
 button {
-  padding: 8px 12px;
+  padding: 8px 14px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  background: #a8bce4;
   cursor: pointer;
-  background: #4f46e5;
-  color: white;
   transition: 0.2s;
 }
 
 button:hover {
-  opacity: 0.85;
+  background: #d1d5db;
 }
 
 .filter {
@@ -66,19 +81,25 @@ button:hover {
   margin: 10px 0 20px;
 }
 
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
 .chart {
   background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-top: 20px;
 }
 
 .records {
+  margin-top: 20px;
   background: white;
   padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
 }
 
 .record-item {
@@ -89,5 +110,47 @@ button:hover {
 }
 
 .delete-btn {
-  background: yellowgreen;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 16px;
+}
+
+.kpi-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.kpi-card {
+  text-align: center;
+  transition: 0.2s;
+}
+
+.kpi-card:hover {
+  transform: translateY(-7px);
+  transition: all 0.2s ease;
+}
+
+.kpi-card h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.kpi-card p {
+  margin: 5px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
 }
